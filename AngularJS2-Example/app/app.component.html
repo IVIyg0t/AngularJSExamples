@@ -1,0 +1,92 @@
+<div id="top">
+    <div id="menu">
+        <ul id="menu-list">
+            <li class = "list-item"><a href="index.html">Home</a></li>
+            <li class = "list-item"><a href="angular1.html">AngularJS 1 Example</a></li>
+            <li class = "list-item"><a href="angular2.html">AngularJS 2 Example</a></li>
+        </ul>
+    </div>
+    <div id="welcome">
+
+        <h1>{{title}}</h1>
+
+        <h2>{{subTitle}}</h2>
+
+    </div>
+
+    <div id="main">
+
+        <div id="button">
+
+        <button (click)="getWeather()">Get weather!</button>
+
+        </div>
+
+        <div *ngIf="weather" id="weather-info">
+
+            <h2>Showing weather for {{weather.name}}</h2>
+
+            <h3>Main Info:</h3>
+
+            <p>
+
+                <b>Temperature (F): </b> {{weather.main.temp}} +- {{weather.main.temp_max - weather.main.temp_min}} degrees
+
+                <br />
+
+                <b>Pressure: </b> {{weather.main.pressure}}
+
+                <br />
+
+                <b>Humidity: </b> {{weather.main.humidity}}%
+
+                <br />
+
+            </p>
+
+            <h3>Wind : </h3>
+
+            <p>
+
+                <b>Speed: </b> {{weather.wind.speed}}
+
+                <br />
+
+                <b>Degree: </b> {{weather.wind.deg}}
+
+                <br />
+
+            </p>
+
+            <h3>Clouds: {{weather.clouds.all}}</h3>
+
+            <h3>Area: </h3>
+
+            <p>
+
+                <b>Country: </b> {{weather.sys.country}}
+
+                <br />
+
+                <b>City: </b> {{weather.name}}
+
+                <br />
+
+                <b>Sunrise: </b> {{weather.sys.sunrise*1000 | date: 'yyyy-MM-dd HH:mm:ss Z'}}
+
+                <br />
+
+                <b>Sunset: </b> {{weather.sys.sunset*1000 | date: 'yyyy-MM-dd HH:mm:ss Z'}}
+
+                <br />
+
+            </p>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+

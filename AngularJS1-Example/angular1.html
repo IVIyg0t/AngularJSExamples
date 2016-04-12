@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://dev3.myg0tm3dia.com/style.css">
+    <script src="http://dev3.myg0tm3dia.com/js/angular1example.js"></script>    
+</head>
+
+<body ng-app="example1">
+    
+    <div id="menu">
+        <ul id="menu-list">
+            <li class = "list-item"><a href="index.html">Home</a></li>
+            <li class = "list-item"><a href="angular1.html">AngularJS 1 Example</a></li>
+            <li class = "list-item"><a href="/example2">AngularJS 2 Example</a></li>
+        </ul>
+    </div>
+    
+    <div ng-controller="myCtrl" id="main">
+        <div id="main">
+            <h1>Example 1</h1>
+            <p>The current example shows sample weather information collected via the OpenWeatherMap's API.  
+               The data is returned in the JSON format. This simple app uses AngularJS version: 1.5.3 and displays
+               the information via a controller.
+            </p>
+            <h2>Current weather for {{data.name}}</h2>
+            <h3>Main Info:</h3>
+            <p> <b>Temperature</b> (F): {{data.main.temp}} +- {{data.main.temp_max - data.main.temp_min}} degrees <br /> 
+                <b>Pressure:</b> {{data.main.pressure}} <br />
+                <b>Humidity:</b> {{data.main.humidity}}% <br />
+            </p>
+            <h4>Wind: </h4>
+            <p>
+                <b>Speed:</b> {{data.wind.speed}} <br />
+                <b>Degree:</b> {{data.wind.deg}} <br />
+            </p>
+            <h4>Clouds: {{data.clouds.all}}</h3>
+            <!--<h3>Rain: {{data.rain.3h}}</h3>-->
+            <h4>Area:</h4>
+            <p>
+                <b>Country:</b> {{data.sys.country}} <br />
+                <b>City:</b> {{data.sys.name}} <br />
+                <b>Sunrise:</b> {{data.sys.sunrise*1000 | date: 'yyyy-MM-dd HH:mm:ss Z'}} <br />
+                <b>Sunset:</b> {{data.sys.sunset*1000 | date: 'yyyy-MM-dd HH:mm:ss Z'}} <br />
+            </p>
+        </div>  
+    </div>
+</body>
+
+</html>
+
